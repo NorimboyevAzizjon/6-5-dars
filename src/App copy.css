@@ -1,0 +1,238 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'Roboto', sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  line-height: 1.6;
+}
+
+/* Asosiy layout */
+.app-layout {
+  height: 100vh !important;
+  width: 100% !important;
+  min-height: 100vh !important;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+}
+
+/* Header */
+.app-header {
+  height: 64px !important;
+  min-height: 64px !important;
+  flex-shrink: 0;
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0 50px !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1000;
+}
+
+/* Content - asosiy qism */
+.app-content {
+  height: calc(100vh - 64px) !important;
+  min-height: calc(100vh - 64px) !important;
+  padding: 24px !important;
+  margin: 0 !important;
+  overflow: auto;
+  background: transparent !important;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Stats grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-shrink: 0;
+}
+
+/* Asosiy content */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+/* Glass card */
+.glass-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+              inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Table container */
+.table-container {
+  flex: 1;
+  overflow: auto;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Table styles */
+.ant-table-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.ant-spin-nested-loading {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.ant-spin-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.ant-table {
+  flex: 1;
+}
+
+.ant-table-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.ant-table-body {
+  flex: 1;
+  overflow: auto !important;
+}
+
+/* Pagination */
+.pagination-container {
+  flex-shrink: 0;
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+/* Card styles */
+.ant-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: transparent !important;
+}
+
+.ant-card-head {
+  flex-shrink: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 20px 24px !important;
+  background: transparent !important;
+}
+
+.ant-card-body {
+  flex: 1;
+  padding: 24px !important;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  overflow: hidden;
+}
+
+/* Table header */
+.ant-table-thead > tr > th {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: white !important;
+  font-weight: 600;
+  border: none !important;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.ant-table-tbody > tr > td {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  padding: 12px 8px;
+}
+
+.ant-table-tbody > tr:hover > td {
+  background: rgba(102, 126, 234, 0.05) !important;
+}
+
+/* Loading spinner */
+.loading-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .app-header {
+    padding: 0 20px !important;
+  }
+  
+  .app-content {
+    padding: 16px !important;
+  }
+  
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  
+  .ant-card-body {
+    padding: 16px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .app-header {
+    padding: 0 16px !important;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(102, 126, 234, 0.5);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(102, 126, 234, 0.7);
+}
